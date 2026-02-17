@@ -15,7 +15,7 @@ CFG_Project_Anshita_Urvija/
 ├── MarkovCrossValidation.py
 ├── SimplerVersion.py
 ├── README.md
-└── (other files)
+└── Output_curves_for_REST_k5_m3
  ```
 ### Step 3:**Place the extracted `data` directory from `data.zip` inside this folder.**
 Final structure should be:
