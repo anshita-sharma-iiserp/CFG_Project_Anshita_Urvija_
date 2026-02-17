@@ -53,7 +53,7 @@ def split_sequences_by_tf(dnaseq_tsv_path, tf_name):
 
 
 
-# Markov model helpers
+# Markov model building and scoring
 
 BASE_NAME = ("A", "C", "G", "T")
 
@@ -123,7 +123,7 @@ def run_markov_cv_and_plot(pos, neg, tf="CTCF", k=5, pseudocount=0.5, m=3):
     folds_pos = k_fold_split(pos, k)
     folds_neg = k_fold_split(neg, k)
 
-    # figures
+    # plot figures
     roc_fig, roc_ax = plt.subplots(constrained_layout=True)
     pr_fig, pr_ax = plt.subplots(constrained_layout=True)
 
@@ -183,7 +183,7 @@ def run_markov_cv_and_plot(pos, neg, tf="CTCF", k=5, pseudocount=0.5, m=3):
 
         # PR for this fold
         precision, recall, _ = precision_recall_curve(y_true, y_score)
-        pr_auc = auc(recall, precision)  # area under PR curve (your previous style)
+        pr_auc = auc(recall, precision)  # area under PR curve 
 
         t1 = time.perf_counter()
 
@@ -195,7 +195,7 @@ def run_markov_cv_and_plot(pos, neg, tf="CTCF", k=5, pseudocount=0.5, m=3):
         roc_ax.plot(fpr, tpr, lw=1.8, label=f"Fold {fold_idx+1}: AUC={roc_auc:.3f}")
         pr_ax.plot(recall, precision, lw=1.8, label=f"Fold {fold_idx+1}: AP={pr_auc:.3f}")
 
-        print(f"Fold {fold_idx+1}/{k}: ROC AUC = {roc_auc:.4f} | PR AUC(AP) = {pr_auc:.4f} | time = {fold_times[-1]:.3f}s")
+        print(f"Fold {fold_idx+1}/{k}: ROC AUC = {roc_auc:.4f} | PR AUC = {pr_auc:.4f} | time = {fold_times[-1]:.3f}s")
 
     # PR baseline (class prevalence)
     baseline = 1.0 * len(pos) / (len(pos) + len(neg))
@@ -239,5 +239,6 @@ dnaseq_path = add_dna_sequence_column(
 pos, neg = split_sequences_by_tf(dnaseq_path, tf)
 
 run_markov_cv_and_plot(pos, neg, tf=tf, k=k, pseudocount=0.5, m=m)
+
 
 
