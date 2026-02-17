@@ -44,9 +44,9 @@ CFG_Project_Anshita_Urvija/
 
 ## 4. How to Run
 Run the script from terminal using:
-python MarkovCrossValidation.p/
+python MarkovCrossValidation.py/
 
-Make sure your path in terminal is  ***/**/CFG_Project_Anshita_Urvija* while running the script.
+Ensure the present working directory is  ***/**/CFG_Project_Anshita_Urvija* while running the script.
 
 You will be prompted for:
 ```bash
