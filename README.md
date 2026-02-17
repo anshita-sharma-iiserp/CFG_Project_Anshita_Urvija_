@@ -4,7 +4,7 @@
 * Libraries: numpy, pandas, matplotlib, sklearn, pyfaidx
 
 ## 2. Import data files
-he chromosome `.fa` files are too large for GitHub. Please download them separately:
+The chromosome `.fa` files are too large for GitHub. Please download them separately:
 
 ### Step 1: Download the data
 **[Download data.zip from Google Drive](https://drive.google.com/file/d/1JUuClufcE9jrF9ilLhNqedvsy1lxvzsT/view?usp=sharing)**
