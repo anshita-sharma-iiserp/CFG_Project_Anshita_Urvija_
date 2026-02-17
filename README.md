@@ -46,7 +46,7 @@ CFG_Project_Anshita_Urvija/
 Run the script from terminal using:
 python MarkovCrossValidation.py/
 
-Ensure the present working directory is  ***/**/CFG_Project_Anshita_Urvija* while running the script.
+Ensure the present working directory is  ***/**/CFG_Project_Anshita_Urvija*.
 
 You will be prompted for:
 ```bash
